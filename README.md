@@ -25,8 +25,12 @@ Load balancing ensures that the application will be highly _____, in addition to
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+- What does Filebeat watch for?
+ 
+  Monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash   for indexing. It has two main components, inuts and harvesters. They work together to tail files and send event data to the       output that you specify. 
+- What does Metricbeat record?
+  
+  It helps monitor the servers by collecting metrics from the system and serices running on the server. It inserts the collected     metrics directly into Elasticsearch or send them to Logstash. 
 
 The configuration details of each machine may be found below.
 
@@ -42,20 +46,25 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Elk-Project machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- 20.228.226.223
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by Workstation and JumpBox.
+- Which machine did you allow to access your ELK VM? 
+
+  Jump-Box
+- What was its IP address?
+ 
+  10.0.0.4 (Private)
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 20.228.226.223   |
+| Jump Box | Yes/No              | 10.0.0.1  20.228.226.223   |
 | Web-1    |  No                 | 10.0.0.8             |
 | Web-2    |  No                 | 10.0.0.9             |
-| ELK-Project | No               | 10.1.0.4  20.110.80.233 |
+| ELK-Project | No               | 10.1.0.4   20.110.80.233 |
 
 ### Elk Configuration
 

@@ -33,7 +33,7 @@ Load balancing ensures that the application will be highly available, in additio
 
 *__Load balancers__* manage the flow of information between the server and endpoint. It also helps servers move data effeciently and conducts health checks on servers to ensure that they can handle requests. 
 
-*__Jumpbox__* is a secure computer where all admins first connect to before launching any task or use an origin point to connect to other servers. 
+*__Jumpbox__* is a secure computer where all admins first connect to before launching any task or use an origin point to connect to other servers and it is also called the "_secure admin workstation_." 
 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the system and system authentication.
@@ -76,12 +76,12 @@ Machines within the network can only be accessed by Workstation and JumpBox.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name        | Publicly Accessible | Allowed IP Addresses       |
-|-------------|---------------------|----------------------------|
-| Jump Box    | Yes/No              | 10.0.0.1  20.228.226.223   |
-| Web-1       | No                  | 10.0.0.8                   |
-| Web-2       | No                  | 10.0.0.9                   |
-| ELK-Project | No                  | 10.1.0.4   20.110.80.233   |
+| Name        | Publicly Accessible | Allowed IP Addresses            |
+|-------------|---------------------|---------------------------------|
+| Jump Box    | Yes/No              | 10.0.0.1       _20.228.226.223_ |
+| Web-1       | No                  | 10.0.0.8                        |
+| Web-2       | No                  | 10.0.0.9                        |
+| ELK-Project | No                  | 10.1.0.4        _20.110.80.233_ |
 
 ### Elk Configuration
 
@@ -119,7 +119,9 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+_Filebeat_ monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing.
+
+_Metricbeat_ helps monitor the servers by collecting metrics from the system and serices running on the server. 
 
 ### Using the Playbook
 
